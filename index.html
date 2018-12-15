@@ -1,0 +1,206 @@
+<html>
+    <head>
+        <title></title>
+        <script>
+        
+            var firstName="Varma";
+            console.log("Welcome to " + firstName)
+            //alert(firstName)
+        
+            var age=46;
+            var isStudent=false;
+
+            age="Fourty Six";
+
+            var school;
+
+            // var myNumbers=[1,2,3]
+
+            var student={
+                name:"Varma",
+                age:46,
+                isStudent:false,
+                "college name":"BVRT"
+            }
+
+            var color='';
+
+            if(color=="red"){
+                console.log("red")
+            }
+            else if(color=="black"){
+                console.log("black")
+            }
+            else if(color=="green"){
+                console.log("green")
+            }
+            else
+            {
+                console.log("unknown")
+            }
+
+            (color=="red") ? console.log("red") : console.log("unknown")
+
+            switch(color){
+                case "red":
+                    console.log("red");
+                    break;
+                case "black":
+                    console.log("red");
+                    break;
+                default:
+                    console.log("unknown")
+            }
+
+            var a=0;
+            while(a<10){
+                console.log(a);
+                a++;
+            }
+
+            var b=0;
+
+            do {
+                console.log(b);
+                b++;
+            }
+            while(b<10);
+            
+
+            for(var i=0;i<10;i++){
+                console.log(i)
+            }
+
+            //Functions
+
+            console.log(add(1,2));
+
+            //Function declaration
+            function add(a,b){
+                return a+b;
+            }
+            
+            
+            //Function expression
+            var sum=function(a,b){
+                return a+b;
+            }
+           
+            console.log(sum(2,3));
+
+            var total=(a,b)=>{
+                return a+b;
+            }
+            //Arrays
+
+            var myNumbers=["one","two","three"];
+
+            console.log(myNumbers[2])
+
+            myNumbers.push("four");
+            myNumbers.unshift("zero");
+            myNumbers.pop();
+            myNumbers.shift();
+
+            var myLetters=["a","b","c"];
+            console.log(myLetters.join('|'))
+
+            myLetters.forEach(function(item){
+                console.log(item)
+            })
+
+            var movies=[
+                {
+                    id:1,
+                    title:"Bahubali",
+                    actor:"Prabhas",
+                    theaters:["A","B"],
+                    revenue:200
+                },
+                {
+                    id:2,
+                    title:"Adhurs",
+                    actor:"NTR",
+                    theaters:["X","Y"],
+                    revenue:100
+                },
+                {
+                    id:3,
+                    title:"Kushi",
+                    actor:"Pavan Kalyan",
+                    theaters:["C","B"],
+                    revenue:20
+                },
+                {
+                    id:4,
+                    title:"Gabbar Singh",
+                    actor:"Pavan Kalyan",
+                    theaters:["C","D"],
+                    revenue:300
+                }
+            ]
+
+            //filter
+            var pavanMovies=movies.filter(function(movie){
+                return movie.actor=='Pavan Kalyan'
+            })
+            console.log(JSON.stringify(pavanMovies));
+
+            var cMovies=movies.filter(function(movie){
+                return movie.theaters.indexOf("C")!=-1;
+            })
+            console.log(cMovies);
+
+
+            //["Prabhas","NTR","Pavan Kalyan"]
+
+            var actors=movies.map(function(movie){
+                return movie.actor;
+            })
+            console.log(actors);
+
+            //reduce
+            var totalRevenue=movies.reduce(function(total,movie){
+                return total+movie.revenue;
+            },0)
+
+            console.log(totalRevenue)
+            
+            var actorList=movies.reduce(function(actors,movie){
+                if(actors==''){
+                    return movie.actor;
+                }
+                else
+                {
+                    return actors+","+movie.actor;
+                }
+            },'')
+            console.log(actorList);
+
+            //["A","B"]
+            var allTheaters=movies.reduce(function(theaters,movie){
+                return theaters.concat(movie.theaters)
+            },[])
+            console.log(allTheaters)
+            //Objects
+
+            //Strings
+
+        </script>
+        <script src="class.js"></script>
+    </head>
+    <body>
+        <h1>Hello</h1>
+        <h1>Good Evening</h1>
+        <ul>
+          <li id="highlight">List Item 1</li>
+          <li class="bolded">List Item 2</li>
+          <li class="bolded">List Item 3</li>
+        </ul>
+        <p>
+            This is paragraph
+        </p>
+        <a href="http://google.com">Some site</a>
+        <button>Say Hello</button>
+    </body>
+</html>
