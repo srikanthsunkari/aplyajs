@@ -1947,7 +1947,66 @@ var isAllHasVowels=names.every((name)=>{
         // trainer={
         //     name:"Ram"
         // }
-    
-</script>
 
-<script src="class.js"></script>
+        class Person{
+            constructor(firstName,lastName){
+                this.firstName=firstName;
+                this.lastName=lastName;
+            }
+
+            displayFullName(){
+                return `${this.firstName} ${this.lastName}`
+            }
+
+        }
+
+        var newPerson=new Person("Varma", "Bhupatiraju");
+
+        //console.log(newPerson.displayFullName());
+
+        class Student extends Person{
+            constructor(firstName,lastName, school){
+                super(firstName,lastName);
+                this.school=school;
+            }
+
+            showSchoolName(){
+                return this.school;
+            }
+
+        }
+
+        var newStudent=new Student("Varma","Bhupatiraju","Oakridge");
+
+        console.log(newStudent.displayFullName());
+        console.log(newStudent.showSchoolName());
+
+        function fa(){
+                return new Promise(function(resolve,reject){
+                    setTimeout(function(){
+                        console.log("function a logged");
+                        resolve("Success");
+                    },5000)
+                })
+            }
+
+            function fb(){
+                console.log("function b logged");
+            }
+
+            fa().then(fb)
+            .catch(function(err){
+                console.log("error occured");
+            });
+
+
+    
+            var add3Numbers = function(a){
+                return function(b){
+                    return function(c){
+                        return a+b+c;
+                    }
+                };
+            }
+
+</script>
